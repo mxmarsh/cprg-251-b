@@ -14,9 +14,16 @@ public class Rectangle {
 	 * This represents the width of the Rectangle
 	 */
 	private double width;
+	/**
+	 * This represents the height of a Rectangle
+	 */
 	private double height;
 
 	// constructors:
+	/**
+	 * 
+	 * Initializes the newly created Rectangle
+	 */
 	public Rectangle() {
 		System.out.println("creating a rectangle...");
 	}
@@ -46,6 +53,12 @@ public class Rectangle {
 		width = w;
 	}
 
+	/**
+	 * This method sets the value of the height attribute.
+	 * 
+	 * @param h
+	 *            Height of Rectangle
+	 */
 	public void setHeight(double h) {
 		height = h;
 	}
@@ -59,14 +72,29 @@ public class Rectangle {
 		return width;
 	}
 
+	/**
+	 * Returns the height of the Rectangle
+	 * 
+	 * @return height
+	 */
 	public double getHeight() {
 		return height;
 	}
 
+	/**
+	 * Returns the perimeter measurement
+	 * 
+	 * @return The perimeter of the Rectangle
+	 */
 	public double getParimeter() {
 		return 2 * (width + height); // adding up all the sides of the rectangle
 	}
 
+	/**
+	 * Returns the Area of the Rectangle
+	 *
+	 * @return Area of the Rectangle
+	 */
 	public double getArea() {
 		return width * height;
 	}
