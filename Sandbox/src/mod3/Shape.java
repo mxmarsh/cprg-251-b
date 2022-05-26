@@ -7,7 +7,7 @@ package mod3;
  *
  */
 
-public class Shape {
+public class Shape extends Object {
 
 	// fields:
 	private String color;

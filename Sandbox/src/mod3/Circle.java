@@ -15,7 +15,6 @@ public class Circle extends Shape {
 	 * Initializes the newly created Circle
 	 */
 	public Circle() {
-		// TODO Auto-generated constructor stub
 	}
 
 	/**
@@ -25,7 +24,6 @@ public class Circle extends Shape {
 	 */
 	public Circle(String color) {
 		super(color);
-		// TODO Auto-generated constructor stub
 	}
 
 }
