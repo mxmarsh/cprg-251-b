@@ -1,6 +1,7 @@
+package mod1oop;
 
 public class Box {
-	
+
 	private int height;
 	private int depth;
 	private int WIDTH;
@@ -10,6 +11,6 @@ public class Box {
 	}
 
 	public Box() {
-		
+
 	}
 }

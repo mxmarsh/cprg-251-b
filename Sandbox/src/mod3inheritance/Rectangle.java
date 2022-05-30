@@ -1,4 +1,4 @@
-package mod3;
+package mod3inheritance;
 
 /**
  * Class description: Represents a Rectangle object.

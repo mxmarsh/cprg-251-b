@@ -1,3 +1,4 @@
+package mod1oop;
 /**
  * This class represents a Rectangle object.
  * 

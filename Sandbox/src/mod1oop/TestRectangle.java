@@ -1,3 +1,4 @@
+package mod1oop;
 
 public class TestRectangle {
 
