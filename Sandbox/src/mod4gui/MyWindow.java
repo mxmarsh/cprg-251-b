@@ -14,6 +14,7 @@ import javax.swing.*;
 
 public class MyWindow extends JFrame {
 
+	// fields:
 	JButton button;
 
 	/**
@@ -42,10 +43,9 @@ public class MyWindow extends JFrame {
 		// create a new panel:
 		JPanel panel = new JPanel();
 
-		/*
-		 * // add some text JLabel label = new JLabel("this is a JLabel");
-		 * panel.add(label);
-		 */
+		// add some text
+		// JLabel label = new JLabel("this is a JLabel");
+		// panel.add(label);
 
 		// add a button
 		button = new JButton("this is a JButton");
@@ -58,7 +58,7 @@ public class MyWindow extends JFrame {
 		 * @Override public void actionPerformed(ActionEvent e) {
 		 * button.setText("clicked!"); } };
 		 * 
-		 * // add that listener to the button button.addActionListener(al);
+		 * // add that listener to the button: button.addActionListener(al);
 		 */
 
 		// button.addActionListener(this); // this only works if we have a component
@@ -87,7 +87,10 @@ public class MyWindow extends JFrame {
 	private class MyActionListener implements ActionListener {
 		@Override
 		public void actionPerformed(ActionEvent e) {
+			// if button 1 was clicked:
 			button.setText("I have been clicked!");
+			// if button 2 was clicked:
+			// something else
 		}
 
 	}
