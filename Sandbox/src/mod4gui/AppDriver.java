@@ -13,7 +13,7 @@ public class AppDriver {
 		// create a window:
 		MyWindow myFrame = new MyWindow();
 
-		// make it visible:
+		// display the window:
 		myFrame.setVisible(true);
 	}
 
