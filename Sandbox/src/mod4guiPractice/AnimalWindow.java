@@ -6,7 +6,7 @@ import java.awt.event.*;
 import javax.swing.*;
 
 /**
- * Class description:
+ * Class description: demo GUI techniques
  *
  * @author Dana Marsh (dana.marsh@sait.ca)
  *
@@ -18,6 +18,10 @@ public class AnimalWindow extends JFrame {
 	private JPanel cardPanel;
 	private CardLayout cards;
 	private JButton dogButton;
+	private JButton catButton;
+	private JButton homeFromDog;
+	private JButton homeFromCat;
+	ActionListener al = new MyActionListener();
 
 	public AnimalWindow() {
 		// call the superclass constructor
@@ -39,6 +43,7 @@ public class AnimalWindow extends JFrame {
 		// add specific panels to each card
 		cardPanel.add("home", createHomePanel());
 		cardPanel.add("dog", createDogPanel());
+		cardPanel.add("cat", createCatPanel());
 
 		// pick which card to show
 		cards.show(cardPanel, "home");
@@ -73,7 +78,6 @@ public class AnimalWindow extends JFrame {
 		panel.add(label);
 
 		return panel;
-
 	}
 
 	private JPanel createBottomPanel() {
@@ -81,22 +85,69 @@ public class AnimalWindow extends JFrame {
 		JPanel panel = new JPanel();
 
 		dogButton = new JButton("dog");
-		JButton catButton = new JButton("cat");
+		catButton = new JButton("cat");
 
-		dogButton.addActionListener(new MyActionListener());
+		dogButton.addActionListener(al);
+		catButton.addActionListener(al);
 
 		panel.add(dogButton);
 		panel.add(catButton);
 
 		return panel;
-
 	}
 
 	private JPanel createDogPanel() {
 		JPanel panel = new JPanel();
+		panel.setLayout(new BorderLayout());
 
+		// create the top half:
+		JPanel topPanel = new JPanel();
+
+		// add content to top half:
 		JLabel label = new JLabel("yes, dogs are best");
-		panel.add(label);
+		topPanel.add(label);
+
+		// add top half to the panel:
+		panel.add(topPanel, BorderLayout.NORTH);
+
+		// create the bottom half:
+		JPanel bottomPanel = new JPanel();
+
+		// add content to bottom half:
+		homeFromDog = new JButton("go home");
+		bottomPanel.add(homeFromDog);
+		homeFromDog.addActionListener(al);
+
+		// add bottom half to the panel:
+		panel.add(bottomPanel, BorderLayout.SOUTH);
+
+		return panel;
+	}
+
+	private JPanel createCatPanel() {
+		JPanel panel = new JPanel();
+		panel.setLayout(new BorderLayout());
+
+		// create the top half:
+		JPanel topPanel = new JPanel();
+
+		// add content to top half:
+		JLabel label = new JLabel("I guess cats are pretty cool, too");
+		topPanel.add(label);
+
+		// add top half to the panel:
+		panel.add(topPanel, BorderLayout.NORTH);
+
+		// create the bottom half:
+		JPanel bottomPanel = new JPanel();
+
+		// add content to bottom half:
+		homeFromCat = new JButton("go home");
+		bottomPanel.add(homeFromCat);
+		homeFromCat.addActionListener(al);
+
+		// add bottom half to the panel:
+		panel.add(bottomPanel, BorderLayout.SOUTH);
 
 		return panel;
 	}
@@ -107,13 +158,12 @@ public class AnimalWindow extends JFrame {
 		public void actionPerformed(ActionEvent e) {
 			if (e.getSource() == dogButton) {
 				cards.show(cardPanel, "dog");
+			} else if (e.getSource() == catButton) {
+				cards.show(cardPanel, "cat");
+			} else if (e.getSource() == homeFromDog || e.getSource() == homeFromCat) {
+				cards.show(cardPanel, "home");
 			}
-
 		}
 	}
 
-	/*
-	 * 1. attach a listener to the cat button 2. create a cat card 3. add buttons to
-	 * each of the dog and cat cards that send us back home
-	 */
 }
