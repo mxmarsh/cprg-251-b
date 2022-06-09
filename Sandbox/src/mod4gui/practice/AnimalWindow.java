@@ -1,4 +1,4 @@
-package mod4guiPractice;
+package mod4gui.practice;
 
 import java.awt.*;
 import java.awt.event.*;
