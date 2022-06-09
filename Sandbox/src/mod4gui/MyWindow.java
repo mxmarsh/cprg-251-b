@@ -64,7 +64,7 @@ public class MyWindow extends JFrame {
 		// button.addActionListener(this); // this only works if we have a component
 		// class
 
-		button.addActionListener(new MyActionListener()); // create an instance of the inner class
+		button.addActionListener(new MyAwesomeActionListener()); // create an instance of the inner class
 
 		/*
 		 * this will only work if we use BorderLayout: JButton buttonWest = new
@@ -84,7 +84,7 @@ public class MyWindow extends JFrame {
 		return panel;
 	}
 
-	private class MyActionListener implements ActionListener {
+	private class MyAwesomeActionListener implements ActionListener {
 		@Override
 		public void actionPerformed(ActionEvent e) {
 			// if button 1 was clicked:
