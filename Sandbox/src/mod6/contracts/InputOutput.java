@@ -24,4 +24,8 @@ public interface InputOutput {
 	 */
 	public String prompt(String text);
 
+	public default void displayError(String text) {
+		System.out.println("ERROR");
+	}
+
 }
