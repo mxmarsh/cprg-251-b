@@ -28,7 +28,7 @@ public class AnimalWindow extends JFrame {
 		super("Welcome to the Pet Selector");
 
 		// set the size
-		this.setSize(400, 100);
+		this.setSize(400, 150);
 
 		// set what happens when the window closes
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -75,6 +75,11 @@ public class AnimalWindow extends JFrame {
 		JPanel panel = new JPanel();
 
 		JLabel label = new JLabel("which is best?");
+
+		// change the font:
+		Font titleFont = new Font("Verdana", Font.PLAIN, 36);
+		label.setFont(titleFont);
+
 		panel.add(label);
 
 		return panel;
@@ -106,6 +111,37 @@ public class AnimalWindow extends JFrame {
 		// add content to top half:
 		JLabel label = new JLabel("yes, dogs are best");
 		topPanel.add(label);
+
+		/* NEW STUFF!!! */
+		// add a scrolling pane of dog breeds
+		// create a DefaultListModel<String>
+		DefaultListModel<String> listModel = new DefaultListModel<String>();
+		// add some dog breeds to the list
+		listModel.addElement("Chihuahua");
+		listModel.addElement("Pitbull");
+		listModel.addElement("Border collie");
+		listModel.addElement("Dacshund");
+		listModel.addElement("Pug");
+		listModel.addElement("Boxer");
+		listModel.addElement("Greyhound");
+		listModel.addElement("Beagle");
+		listModel.addElement("Beagle");
+		listModel.addElement("Beagle");
+		listModel.addElement("Beagle");
+		listModel.addElement("Beagle");
+		listModel.addElement("Beagle");
+		listModel.addElement("Beagle");
+
+		// use that DefaultListModel to create a JList
+		JList listComponent = new JList(listModel);
+
+		// add a scrolling bar to the JList
+		JScrollPane scrolly = new JScrollPane(listComponent);
+
+		// add the scrolling pane to my panel
+		topPanel.add(scrolly);
+
+		/* END OF NEW STUFF!!! */
 
 		// add top half to the panel:
 		panel.add(topPanel, BorderLayout.NORTH);
