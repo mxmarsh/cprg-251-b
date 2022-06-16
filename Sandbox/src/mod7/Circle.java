@@ -1,4 +1,4 @@
-package mod7exceptions;
+package mod7;
 
 import mod7.exceptions.InvalidRadiusException;
 

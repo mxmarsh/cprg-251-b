@@ -1,4 +1,4 @@
-package mod7exceptions;
+package mod7;
 
 import javax.swing.JOptionPane;
 
