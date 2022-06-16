@@ -24,6 +24,11 @@ public class AppDriver {
 
 	}
 
+	/**
+	 * Another silly method to show rethrowing.
+	 * 
+	 * @throws Exception if doSomethingElse was provided a negative value.
+	 */
 	public static void doSomething() throws Exception {
 		try {
 			doSomethingElse(0);
@@ -34,6 +39,12 @@ public class AppDriver {
 		}
 	}
 
+	/**
+	 * This method may or may not throw an Exception.
+	 * 
+	 * @param x represents the input into the method
+	 * @throws Exception if the provided value is less than zero
+	 */
 	public static void doSomethingElse(int x) throws Exception {
 		if (x < 0)
 			throw new Exception("This is really silly problem that should not have happened.");
