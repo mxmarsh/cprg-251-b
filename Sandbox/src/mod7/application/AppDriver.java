@@ -21,6 +21,8 @@ public class AppDriver {
 			System.out.println("Your Circle has been created. Congratulations.");
 		} catch (InvalidRadiusException e) {
 			System.out.println(e.getMessage());
+		} finally {
+			keyboard.close();
 		}
 
 	}
