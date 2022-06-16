@@ -2,8 +2,8 @@ package mod7.application;
 
 import java.util.Scanner;
 
-import mod7.Circle;
 import mod7.exceptions.InvalidRadiusException;
+import mod7.problemdomain.Circle;
 
 public class AppDriver {
 

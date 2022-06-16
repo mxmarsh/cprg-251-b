@@ -1,4 +1,4 @@
-package mod7;
+package mod7.problemdomain;
 
 import mod7.exceptions.InvalidRadiusException;
 
