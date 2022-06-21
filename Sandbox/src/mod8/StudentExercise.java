@@ -15,7 +15,7 @@ public class StudentExercise {
 
 			writeStudents();
 
-			displayStudents();
+			// displayStudents();
 
 			displayActiveStudents();
 
@@ -61,16 +61,31 @@ public class StudentExercise {
 
 		// loop through and display each student
 		for (int counter = 0; counter < raf.length(); counter += RECORD_LENGTH) {
-			System.out.println("Student #" + (counter / RECORD_LENGTH + 1) + " : " + raf.readUTF().trim()
-					+ "\nStudent age: " + raf.readByte() + "\nStudent GPA: " + raf.readFloat() + "\nStudent Active: "
-					+ raf.readBoolean() + "\n");
-
+			System.out.println("Student #" + (counter / RECORD_LENGTH + 1) + ":\t" + raf.readUTF().trim() + "\n\tAge:\t"
+					+ raf.readByte() + "\n\tGPA:\t" + raf.readFloat() + "\n\tActive:\t" + raf.readBoolean() + "\n");
 		}
-
 	}
 
-	private static void displayActiveStudents() {
+	private static void displayActiveStudents() throws IOException {
+		// put pointer at start of file:
+		raf.seek(0);
 
-	}
+		// loop through and display each ACTIVE student
+		for (int counter = 0; counter < raf.length(); counter += RECORD_LENGTH) {
 
-}
+			// move the pointer to the active flag and read in its value:
+			raf.seek(counter + RECORD_LENGTH - 1);
+			boolean isActive = raf.readBoolean(); // now the pointer is at the end of this record
+
+			if (isActive) {
+				// move the pointer back to the start of the record:
+				raf.seek(counter);
+
+				System.out.println("Student #" + (counter / RECORD_LENGTH + 1) + ":\t" + raf.readUTF().trim()
+						+ "\n\tAge:\t" + raf.readByte() + "\n\tGPA:\t" + raf.readFloat() + "\n\tActive:\t"
+						+ raf.readBoolean() + "\n"); // now the pointer is at the end of this record
+			} // end if
+		} // end for
+	} // end method
+
+} // end class
