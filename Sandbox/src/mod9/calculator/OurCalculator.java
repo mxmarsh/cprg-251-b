@@ -1,6 +1,7 @@
 package mod9.calculator;
 
 import mod9.contracts.SimpleCalculator;
+import mod9.exceptions.SquareRootNegativeException;
 
 public class OurCalculator implements SimpleCalculator {
 
@@ -16,14 +17,27 @@ public class OurCalculator implements SimpleCalculator {
 
 	@Override
 	public double multiply(double num1, double num2) {
-		// TODO Auto-generated method stub
-		return 0;
+		return num1 * num2;
 	}
 
 	@Override
 	public double divide(double num1, double num2) throws ArithmeticException {
-		// TODO Auto-generated method stub
-		return 0;
+		if (num2 == 0)
+			throw new ArithmeticException("cannot divide by zero.");
+
+		return num1 / num2;
+	}
+
+	@Override
+	public double square(double num) {
+		return num * num;
+	}
+
+	@Override
+	public double squareRoot(double num) throws SquareRootNegativeException {
+		if (num < 0)
+			throw new SquareRootNegativeException("Cannot take the square root of a negative number");
+		return Math.pow(num, .5);
 	}
 
 }

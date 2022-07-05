@@ -1,5 +1,7 @@
 package mod9.contracts;
 
+import mod9.exceptions.SquareRootNegativeException;
+
 /**
  * 
  * Class description: A contract to create a simple calculator
@@ -46,5 +48,22 @@ public interface SimpleCalculator {
 	 * @throws ArithmeticException if the second number is zero.
 	 */
 	public double divide(double num1, double num2) throws ArithmeticException;
+
+	/**
+	 * Method to calculate the square of a number
+	 * 
+	 * @param num the value provided
+	 * @return the square of that number (num * num)
+	 */
+	public double square(double num);
+
+	/**
+	 * Method calculates the square root of a number.
+	 * 
+	 * @param num the value provided
+	 * @return the square root of the number given (num ^ .5)
+	 * @throws SquareRootNegativeException if the value provided is negative
+	 */
+	public double squareRoot(double num) throws SquareRootNegativeException;
 
 }
