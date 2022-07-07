@@ -78,16 +78,13 @@ class OurCalculatorTests {
 	@Test
 	public void testDivideByZero() {
 		// 1.23 divided by 0
-
 		assertThrows(ArithmeticException.class, () -> {
 			calc.divide(val1, 0);
 		});
-
 	}
 
 	@Test
 	public void testSquare() {
-
 		double expected = 1.5129;
 		double actual = calc.square(val1);
 		assertEquals(expected, actual, 0.001);
@@ -100,7 +97,6 @@ class OurCalculatorTests {
 		double actual;
 
 		try {
-
 			actual = calc.squareRoot(val1);
 			assertEquals(expected, actual, .001, "SquareRoot is wrong");
 
@@ -108,22 +104,18 @@ class OurCalculatorTests {
 			// this is not expected
 			fail("should not have thrown an exception");
 		}
-
 	}
 
 	@Test
 	public void testSquareRootv2() throws SquareRootNegativeException {
 		// 1.23*1.23 = 1.5129
-
 		double expected = 1.1090;
 		double actual = calc.squareRoot(val1);
-
 		assertEquals(expected, actual, .001, "divide failed");
 	}
 
 	@Test
 	public void testSquareRootNegative() {
-
 		try {
 			calc.squareRoot(-val1);
 			fail("should have thrown an exception already");
