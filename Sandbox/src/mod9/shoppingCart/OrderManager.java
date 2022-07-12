@@ -59,7 +59,7 @@ public class OrderManager {
 		// loop through the arrayList
 		for (Product p : products) {
 			// if the product name matches, return true
-			if (p.getName() == product)
+			if (p.getName().equals(product))
 				return true;
 		}
 
