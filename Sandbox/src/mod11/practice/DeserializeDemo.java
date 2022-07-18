@@ -24,7 +24,6 @@ public class DeserializeDemo {
 			fis.close();
 		} catch (Exception e) {
 			System.out.println("Sorry, something went wrong.");
-			e.printStackTrace();
 		}
 
 	}

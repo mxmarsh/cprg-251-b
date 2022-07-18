@@ -17,6 +17,7 @@ public class Student implements Serializable {
 	private String name;
 	private double gpa;
 	private String stream; // new field added in v2.0
+	private double scholarship; // we're ok with the default value, don't need to update the version #
 
 	public Student() {
 
@@ -34,7 +35,7 @@ public class Student implements Serializable {
 		this.stream = stream;
 	}
 
-	// equals()
+	// TO DO : override equals()
 
 	// toString
 	@Override
