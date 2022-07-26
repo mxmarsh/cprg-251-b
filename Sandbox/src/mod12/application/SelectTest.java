@@ -15,7 +15,7 @@ public class SelectTest {
 			driver.connect();
 
 			// execute a SQL query
-			ResultSet rs = driver.get("SELECT * FROM student");
+			ResultSet rs = driver.get("SELECT * FROM student"); // TO DO: Make this query better!
 
 			// display results
 			while (rs.next()) {
@@ -27,7 +27,7 @@ public class SelectTest {
 				System.out.println("Name: " + name);
 				// read their gpa and print it
 				double gpa = rs.getDouble(3);
-				System.out.println("GPA:  " + gpa);
+				System.out.println("GPA:  " + gpa); // TO DO: create Student objects
 			}
 
 			// disconnect
