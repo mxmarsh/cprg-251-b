@@ -52,27 +52,25 @@ public class PermutationRecursion {
 	 * @param prefix The characters already ordered.
 	 * @return The finished permutation as a String.
 	 */
-	private static String permutateHelper(char[] chars, String prefix) {
+	private static void permutateHelper(char[] chars, String prefix) {
 		String result;
 
 		// base case
 		if (chars.length <= 1) {
 			result = prefix + String.valueOf(chars);
 			System.out.println(result);
-			return result;
+		} else {
+			// recursive case
+			for (int currentChar = 0; currentChar < chars.length; currentChar++) { // for each character in the string
+
+				// swap the current element with the first element
+				swap(chars, 0, currentChar);
+
+				// now that the 1st char is in place, calculate all permutations of the rest:
+				char[] subArray = Arrays.copyOfRange(chars, 1, chars.length);
+				permutateHelper(subArray, prefix + chars[0]);
+			}
 		}
-		// recursive case
-		for (int currentChar = 0; currentChar < chars.length; currentChar++) { // for each character in the string
-
-			// swap the current element with the first element
-			swap(chars, 0, currentChar);
-
-			// now that the 1st char is in place, calculate all permutations of the rest:
-			char[] subArray = Arrays.copyOfRange(chars, 1, chars.length);
-			permutateHelper(subArray, prefix + chars[0]);
-		}
-
-		return null;
 	}
 
 	/**
