@@ -68,9 +68,9 @@ public class PermutationRecursion {
 				// now that the 1st char is in place, calculate all permutations of the rest:
 				char[] subArray = Arrays.copyOfRange(chars, 1, chars.length);
 				permutateHelper(subArray, prefix + chars[0]);
-			}
-		}
-	}
+			} // end for loop
+		} // end else-branch
+	} // end method
 
 	/**
 	 * Helper method to swap two characters in an array.
