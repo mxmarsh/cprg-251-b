@@ -40,8 +40,8 @@ public class PermutationRecursion {
 	 * @param s A string of characters
 	 */
 	public static void permutate(String s) {
-		char[] chars = s.toCharArray();
 		System.out.println("The permutations of " + s + " are:");
+		char[] chars = s.toCharArray();
 		permutateHelper(chars, "");
 	}
 
@@ -62,7 +62,6 @@ public class PermutationRecursion {
 		} else {
 			// recursive case
 			for (int currentChar = 0; currentChar < chars.length; currentChar++) { // for each character in the string
-
 				// swap the current element with the first element
 				swap(chars, 0, currentChar);
 
